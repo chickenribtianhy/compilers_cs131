@@ -1,0 +1,153 @@
+
+<!-- saved from url=(0050)http://dinosaur.compilertools.net/bison/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Bison, The YACC-compatible Parser Generator</title>
+</head>
+
+<body bgcolor="white">
+<a href="http://dinosaur.compilertools.net/">The Lex &amp; Yacc Page</a>
+<p>
+</p><h1>
+Bison<br>
+The YACC-compatible Parser Generator
+</h1>
+
+<b>
+<i>
+November 1995, Bison Version 1.25<br>
+by Charles Donnelly and Richard Stallman
+</i>
+</b>
+<br>
+<br>
+<br>
+<ul>
+<li><a name="SEC1" href="http://dinosaur.compilertools.net/bison/bison_1.html#SEC1">Introduction</a>
+</li><li><a name="SEC2" href="http://dinosaur.compilertools.net/bison/bison_2.html#SEC2">Conditions for Using Bison</a>
+</li><li><a name="SEC3" href="http://dinosaur.compilertools.net/bison/bison_3.html#SEC3">GNU GENERAL PUBLIC LICENSE</a>
+<ul>
+<li><a name="SEC4" href="http://dinosaur.compilertools.net/bison/bison_3.html#SEC4">Preamble</a>
+</li><li><a name="SEC5" href="http://dinosaur.compilertools.net/bison/bison_3.html#SEC5">TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION</a>
+</li><li><a name="SEC6" href="http://dinosaur.compilertools.net/bison/bison_3.html#SEC6">How to Apply These Terms to Your New Programs</a>
+</li></ul>
+</li><li><a name="SEC7" href="http://dinosaur.compilertools.net/bison/bison_4.html#SEC7">The Concepts of Bison</a>
+<ul>
+<li><a name="SEC8" href="http://dinosaur.compilertools.net/bison/bison_4.html#SEC8">Languages and Context-Free Grammars</a>
+</li><li><a name="SEC9" href="http://dinosaur.compilertools.net/bison/bison_4.html#SEC9">From Formal Rules to Bison Input</a>
+</li><li><a name="SEC10" href="http://dinosaur.compilertools.net/bison/bison_4.html#SEC10">Semantic Values</a>
+</li><li><a name="SEC11" href="http://dinosaur.compilertools.net/bison/bison_4.html#SEC11">Semantic Actions</a>
+</li><li><a name="SEC12" href="http://dinosaur.compilertools.net/bison/bison_4.html#SEC12">Bison Output: the Parser File</a>
+</li><li><a name="SEC13" href="http://dinosaur.compilertools.net/bison/bison_4.html#SEC13">Stages in Using Bison</a>
+</li><li><a name="SEC14" href="http://dinosaur.compilertools.net/bison/bison_4.html#SEC14">The Overall Layout of a Bison Grammar</a>
+</li></ul>
+</li><li><a name="SEC15" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC15">Examples</a>
+<ul>
+<li><a name="SEC16" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC16">Reverse Polish Notation Calculator</a>
+<ul>
+<li><a name="SEC17" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC17">Declarations for <code>rpcalc</code></a>
+</li><li><a name="SEC18" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC18">Grammar Rules for <code>rpcalc</code></a>
+<ul>
+<li><a name="SEC19" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC19">Explanation of <code>input</code></a>
+</li><li><a name="SEC20" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC20">Explanation of <code>line</code></a>
+</li><li><a name="SEC21" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC21">Explanation of <code>expr</code></a>
+</li></ul>
+</li><li><a name="SEC22" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC22">The <code>rpcalc</code> Lexical Analyzer</a>
+</li><li><a name="SEC23" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC23">The Controlling Function</a>
+</li><li><a name="SEC24" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC24">The Error Reporting Routine</a>
+</li><li><a name="SEC25" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC25">Running Bison to Make the Parser</a>
+</li><li><a name="SEC26" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC26">Compiling the Parser File</a>
+</li></ul>
+</li><li><a name="SEC27" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC27">Infix Notation Calculator: <code>calc</code></a>
+</li><li><a name="SEC28" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC28">Simple Error Recovery</a>
+</li><li><a name="SEC29" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC29">Multi-Function Calculator: <code>mfcalc</code></a>
+<ul>
+<li><a name="SEC30" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC30">Declarations for <code>mfcalc</code></a>
+</li><li><a name="SEC31" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC31">Grammar Rules for <code>mfcalc</code></a>
+</li><li><a name="SEC32" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC32">The <code>mfcalc</code> Symbol Table</a>
+</li></ul>
+</li><li><a name="SEC33" href="http://dinosaur.compilertools.net/bison/bison_5.html#SEC33">Exercises</a>
+</li></ul>
+</li><li><a name="SEC34" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC34">Bison Grammar Files</a>
+<ul>
+<li><a name="SEC35" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC35">Outline of a Bison Grammar</a>
+<ul>
+<li><a name="SEC36" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC36">The C Declarations Section</a>
+</li><li><a name="SEC37" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC37">The Bison Declarations Section</a>
+</li><li><a name="SEC38" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC38">The Grammar Rules Section</a>
+</li><li><a name="SEC39" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC39">The Additional C Code Section</a>
+</li></ul>
+</li><li><a name="SEC40" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC40">Symbols, Terminal and Nonterminal</a>
+</li><li><a name="SEC41" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC41">Syntax of Grammar Rules</a>
+</li><li><a name="SEC42" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC42">Recursive Rules</a>
+</li><li><a name="SEC43" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC43">Defining Language Semantics</a>
+<ul>
+<li><a name="SEC44" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC44">Data Types of Semantic Values</a>
+</li><li><a name="SEC45" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC45">More Than One Value Type</a>
+</li><li><a name="SEC46" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC46">Actions</a>
+</li><li><a name="SEC47" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC47">Data Types of Values in Actions</a>
+</li><li><a name="SEC48" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC48">Actions in Mid-Rule</a>
+</li></ul>
+</li><li><a name="SEC49" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC49">Bison Declarations</a>
+<ul>
+<li><a name="SEC50" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC50">Token Type Names</a>
+</li><li><a name="SEC51" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC51">Operator Precedence</a>
+</li><li><a name="SEC52" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC52">The Collection of Value Types</a>
+</li><li><a name="SEC53" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC53">Nonterminal Symbols</a>
+</li><li><a name="SEC54" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC54">Suppressing Conflict Warnings</a>
+</li><li><a name="SEC55" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC55">The Start-Symbol</a>
+</li><li><a name="SEC56" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC56">A Pure (Reentrant) Parser</a>
+</li><li><a name="SEC57" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC57">Bison Declaration Summary</a>
+</li></ul>
+</li><li><a name="SEC58" href="http://dinosaur.compilertools.net/bison/bison_6.html#SEC58">Multiple Parsers in the Same Program</a>
+</li></ul>
+</li><li><a name="SEC59" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC59">Parser C-Language Interface</a>
+<ul>
+<li><a name="SEC60" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC60">The Parser Function <code>yyparse</code></a>
+</li><li><a name="SEC61" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC61">The Lexical Analyzer Function <code>yylex</code></a>
+<ul>
+<li><a name="SEC62" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC62">Calling Convention for <code>yylex</code></a>
+</li><li><a name="SEC63" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC63">Semantic Values of Tokens</a>
+</li><li><a name="SEC64" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC64">Textual Positions of Tokens</a>
+</li><li><a name="SEC65" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC65">Calling Conventions for Pure Parsers</a>
+</li></ul>
+</li><li><a name="SEC66" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC66">The Error Reporting Function <code>yyerror</code></a>
+</li><li><a name="SEC67" href="http://dinosaur.compilertools.net/bison/bison_7.html#SEC67">Special Features for Use in Actions</a>
+</li></ul>
+</li><li><a name="SEC68" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC68">The Bison Parser Algorithm</a>
+<ul>
+<li><a name="SEC69" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC69">Look-Ahead Tokens</a>
+</li><li><a name="SEC70" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC70">Shift/Reduce Conflicts</a>
+</li><li><a name="SEC71" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC71">Operator Precedence</a>
+<ul>
+<li><a name="SEC72" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC72">When Precedence is Needed</a>
+</li><li><a name="SEC73" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC73">Specifying Operator Precedence</a>
+</li><li><a name="SEC74" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC74">Precedence Examples</a>
+</li><li><a name="SEC75" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC75">How Precedence Works</a>
+</li></ul>
+</li><li><a name="SEC76" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC76">Context-Dependent Precedence</a>
+</li><li><a name="SEC77" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC77">Parser States</a>
+</li><li><a name="SEC78" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC78">Reduce/Reduce Conflicts</a>
+</li><li><a name="SEC79" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC79">Mysterious Reduce/Reduce Conflicts</a>
+</li><li><a name="SEC80" href="http://dinosaur.compilertools.net/bison/bison_8.html#SEC80">Stack Overflow, and How to Avoid It</a>
+</li></ul>
+</li><li><a name="SEC81" href="http://dinosaur.compilertools.net/bison/bison_9.html#SEC81">Error Recovery</a>
+</li><li><a name="SEC82" href="http://dinosaur.compilertools.net/bison/bison_10.html#SEC82">Handling Context Dependencies</a>
+<ul>
+<li><a name="SEC83" href="http://dinosaur.compilertools.net/bison/bison_10.html#SEC83">Semantic Info in Token Types</a>
+</li><li><a name="SEC84" href="http://dinosaur.compilertools.net/bison/bison_10.html#SEC84">Lexical Tie-ins</a>
+</li><li><a name="SEC85" href="http://dinosaur.compilertools.net/bison/bison_10.html#SEC85">Lexical Tie-ins and Error Recovery</a>
+</li></ul>
+</li><li><a name="SEC86" href="http://dinosaur.compilertools.net/bison/bison_11.html#SEC86">Debugging Your Parser</a>
+</li><li><a name="SEC87" href="http://dinosaur.compilertools.net/bison/bison_12.html#SEC87">Invoking Bison</a>
+<ul>
+<li><a name="SEC88" href="http://dinosaur.compilertools.net/bison/bison_12.html#SEC88">Bison Options</a>
+</li><li><a name="SEC89" href="http://dinosaur.compilertools.net/bison/bison_12.html#SEC89">Option Cross Key</a>
+</li><li><a name="SEC90" href="http://dinosaur.compilertools.net/bison/bison_12.html#SEC90">Invoking Bison under VMS</a>
+</li></ul>
+</li><li><a name="SEC91" href="http://dinosaur.compilertools.net/bison/bison_13.html#SEC91">Bison Symbols</a>
+</li><li><a name="SEC92" href="http://dinosaur.compilertools.net/bison/bison_14.html#SEC92">Glossary</a>
+</li><li><a name="SEC93" href="http://dinosaur.compilertools.net/bison/bison_15.html#SEC93">Index</a>
+</li></ul>
+
+
+<div id="speechify-global-notifications"></div><div id="speechify-focus-mode" style="position: absolute; top: 0px; right: 0px; background: white; width: 100%; min-height: 100%; z-index: 1999; display: none;"></div></body></html>

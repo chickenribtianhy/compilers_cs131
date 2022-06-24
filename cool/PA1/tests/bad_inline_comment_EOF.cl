@@ -1,0 +1,1 @@
+cells : CellularAutomaton;  -- inline EOF
