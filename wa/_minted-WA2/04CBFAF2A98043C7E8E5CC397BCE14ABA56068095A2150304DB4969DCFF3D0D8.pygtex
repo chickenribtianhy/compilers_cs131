@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cm}{/** Your answer here */}
+\PYG{o}{\PYGZpc{}}\PYG{p}{\PYGZob{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+\PYG{o}{\PYGZpc{}}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZpc{}}\PYG{n}{token}\PYG{+w}{ }\PYG{n}{IF}\PYG{+w}{ }\PYG{n}{THEN}\PYG{+w}{ }\PYG{n}{ELSE}
+\PYG{o}{\PYGZpc{}}\PYG{n}{nonassoc}\PYG{+w}{ }\PYG{n}{THEN}
+\PYG{o}{\PYGZpc{}}\PYG{n}{nonassoc}\PYG{+w}{ }\PYG{n}{ELSE}
+\PYG{o}{\PYGZpc{}}\PYG{n}{start}\PYG{+w}{ }\PYG{n}{X}
+\end{Verbatim}
